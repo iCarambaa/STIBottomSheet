@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'STIBottomSheet_Example' do
+  pod 'STIBottomSheet', :path => '../'
+
+  target 'STIBottomSheet_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
