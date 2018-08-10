@@ -48,8 +48,21 @@ static const CGFloat kInitialAnimationDuration = 0.5;
 - (void)attachGestureRecognizer {
     UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognizerDidChange:)];
     recognizer.delegate = self;
+    
+    // Try to find a scrollview.
+    UIScrollView *scrollView = nil;
     if ([self.managedSheet.embeddedViewController.view isKindOfClass:[UIScrollView class]]) {
-        UIScrollView *scrollView = (UIScrollView *) self.managedSheet.embeddedViewController.view;
+        scrollView = (UIScrollView *) self.managedSheet.embeddedViewController.view;
+    } else {
+        for (UIView *subview in self.managedSheet.embeddedViewController.view.subviews) {
+            if ([subview isKindOfClass:[UIScrollView class]]) {
+                scrollView = (UIScrollView *)subview;
+                break;
+            }
+        }
+    }
+    
+    if (scrollView) {
         self.embeddedScrollView = scrollView;
         [scrollView.panGestureRecognizer requireGestureRecognizerToFail:recognizer];
     }
@@ -214,7 +227,6 @@ static const CGFloat kInitialAnimationDuration = 0.5;
 
 - (void)setPosition:(STIBottomSheetPosition)position {
     _position = position;
-    NSLog(@"Did move to position %li", (long)position);
     if ([self.delegate respondsToSelector:@selector(animator:didMoveToPosition:)]) {
         [self.delegate animator:self didMoveToPosition:position];
     }
