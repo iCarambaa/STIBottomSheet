@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0DCC1BE65BD205C63961578E /* Pods_STIBottomSheet_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518E45CF59FBF27218F39954 /* Pods_STIBottomSheet_Tests.framework */; };
+		26C926BE211DB92D00343C7F /* STIMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C926BC211DB92D00343C7F /* STIMapViewController.swift */; };
+		26C926BF211DB92D00343C7F /* DemoSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C926BD211DB92D00343C7F /* DemoSheetViewController.swift */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -38,6 +40,9 @@
 
 /* Begin PBXFileReference section */
 		03267330DF0A54FFEBC2D48F /* Pods-STIBottomSheet_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STIBottomSheet_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-STIBottomSheet_Example/Pods-STIBottomSheet_Example.release.xcconfig"; sourceTree = "<group>"; };
+		26C926BB211DB92C00343C7F /* STIBottomSheet_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STIBottomSheet_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		26C926BC211DB92D00343C7F /* STIMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STIMapViewController.swift; sourceTree = "<group>"; };
+		26C926BD211DB92D00343C7F /* DemoSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoSheetViewController.swift; sourceTree = "<group>"; };
 		518E45CF59FBF27218F39954 /* Pods_STIBottomSheet_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STIBottomSheet_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* STIBottomSheet_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STIBottomSheet_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -61,12 +66,12 @@
 		65EC2027966CDB19D9C5A62E /* Pods-STIBottomSheet_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STIBottomSheet_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STIBottomSheet_Tests/Pods-STIBottomSheet_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		89DA6EF18D8D83560CEF3688 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		89DA6EF18D8D83560CEF3688 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		BC89FB91FAB32BD9311086DD /* Pods_STIBottomSheet_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STIBottomSheet_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6DEA3BBF8FA45ADD1E1B52D /* Pods-STIBottomSheet_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STIBottomSheet_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STIBottomSheet_Example/Pods-STIBottomSheet_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DAF13BD9424FC3C1EC0CA643 /* Pods-STIBottomSheet_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STIBottomSheet_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-STIBottomSheet_Tests/Pods-STIBottomSheet_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		DF868D7F4022FF2BA3FD24AF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		E86A1BAB284CF101A4B01230 /* STIBottomSheet.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = STIBottomSheet.podspec; path = ../STIBottomSheet.podspec; sourceTree = "<group>"; };
+		DF868D7F4022FF2BA3FD24AF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		E86A1BAB284CF101A4B01230 /* STIBottomSheet.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = STIBottomSheet.podspec; path = ../STIBottomSheet.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,12 +139,15 @@
 			children = (
 				6003F59C195388D20070C39A /* STIAppDelegate.h */,
 				6003F59D195388D20070C39A /* STIAppDelegate.m */,
+				26C926BD211DB92D00343C7F /* DemoSheetViewController.swift */,
+				26C926BC211DB92D00343C7F /* STIMapViewController.swift */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* STIViewController.h */,
 				6003F5A6195388D20070C39A /* STIViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				26C926BB211DB92C00343C7F /* STIBottomSheet_Example-Bridging-Header.h */,
 			);
 			name = "Example for STIBottomSheet";
 			path = STIBottomSheet;
@@ -247,6 +255,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Sven Titgemeyer";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						LastSwiftMigration = 1000;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -357,6 +368,8 @@
 			files = (
 				6003F59E195388D20070C39A /* STIAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* STIViewController.m in Sources */,
+				26C926BE211DB92D00343C7F /* STIMapViewController.swift in Sources */,
+				26C926BF211DB92D00343C7F /* DemoSheetViewController.swift in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,7 +453,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -473,7 +486,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -485,12 +498,17 @@
 			baseConfigurationReference = C6DEA3BBF8FA45ADD1E1B52D /* Pods-STIBottomSheet_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "STIBottomSheet/STIBottomSheet-Prefix.pch";
 				INFOPLIST_FILE = "STIBottomSheet/STIBottomSheet-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "STIBottomSheet/STIBottomSheet_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -500,12 +518,16 @@
 			baseConfigurationReference = 03267330DF0A54FFEBC2D48F /* Pods-STIBottomSheet_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "STIBottomSheet/STIBottomSheet-Prefix.pch";
 				INFOPLIST_FILE = "STIBottomSheet/STIBottomSheet-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "STIBottomSheet/STIBottomSheet_Example-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -514,6 +536,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 65EC2027966CDB19D9C5A62E /* Pods-STIBottomSheet_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -538,6 +561,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DAF13BD9424FC3C1EC0CA643 /* Pods-STIBottomSheet_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

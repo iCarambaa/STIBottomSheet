@@ -1,0 +1,16 @@
+PODS:
+  - STIBottomSheet (0.1.0)
+
+DEPENDENCIES:
+  - STIBottomSheet (from `../`)
+
+EXTERNAL SOURCES:
+  STIBottomSheet:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  STIBottomSheet: 6843391980bda63e685d167002e8d0c280b136af
+
+PODFILE CHECKSUM: ae686022db077b6e69d2cf4af3f253c5616549c0
+
+COCOAPODS: 1.5.3

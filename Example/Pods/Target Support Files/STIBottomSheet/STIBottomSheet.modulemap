@@ -1,0 +1,6 @@
+framework module STIBottomSheet {
+  umbrella header "STIBottomSheet-umbrella.h"
+
+  export *
+  module * { export * }
+}

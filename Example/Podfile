@@ -1,3 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '11.0'
+install! 'cocoapods', :deterministic_uuids => false
 use_frameworks!
 
 target 'STIBottomSheet_Example' do
@@ -5,7 +8,5 @@ target 'STIBottomSheet_Example' do
 
   target 'STIBottomSheet_Tests' do
     inherit! :search_paths
-
-    
   end
 end
