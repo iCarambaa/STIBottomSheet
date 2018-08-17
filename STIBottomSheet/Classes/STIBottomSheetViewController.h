@@ -22,7 +22,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (strong, nonatomic, readonly) UIViewController *rootViewController;
 
-    
+
+/**
+ Set this to `NO` to disable moving the bottom sheets.
+ */
+@property (nonatomic, assign, getter=isEnabled) BOOL enabled;
 /**
  Initializes a new controller which contains the specified `rootViewController`.
 
@@ -43,6 +47,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)addBottomSheet:(UIViewController *)bottomSheet;
 
+@end
+
+@interface UIViewController (STIBottomSheet)
+@property (nonatomic, nullable, readonly) STIBottomSheetViewController *bottomSheetController;
 @end
 
 NS_ASSUME_NONNULL_END

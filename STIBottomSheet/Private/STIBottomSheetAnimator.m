@@ -184,6 +184,13 @@ static const CGFloat kInitialAnimationDuration = 0.5;
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     NSParameterAssert(gestureRecognizer);
+    NSLog(@"Should begin");
+    if ([self.delegate respondsToSelector:@selector(animatorShouldBeginGestureDrivenTransition:)]){
+        if (![self.delegate animatorShouldBeginGestureDrivenTransition:self]) {
+            return NO;
+        }
+    }
+    
     CGPoint location = [gestureRecognizer locationInView:gestureRecognizer.view];
     if (location.y < 44 || self.position == STIBottomSheetPositionMinimized) {
         return YES;

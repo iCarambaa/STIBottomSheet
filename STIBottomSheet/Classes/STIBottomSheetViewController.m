@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
     if (self) {
         _rootViewController = rootViewController;
         _bottomSheetAnimators = @[].mutableCopy;
+        _enabled = YES;
     }
     return self;
 }
@@ -105,8 +106,24 @@ NS_ASSUME_NONNULL_BEGIN
     }
 }
 
+- (BOOL)animatorShouldBeginGestureDrivenTransition:(STIBottomSheetAnimator *)animator {
+    return self.isEnabled;
+}
+
 - (void)animator:(STIBottomSheetAnimator *)animator updateTransition:(CGFloat)fractionCompleted {
     self.dimmingView.alpha = 0.5 * fractionCompleted;
+}
+
+@end
+
+@implementation UIViewController (STIBottomSheet)
+
+- (STIBottomSheetViewController * _Nullable)bottomSheetController {
+    if ([self isKindOfClass:[STIBottomSheetViewController class]]) {
+        return (STIBottomSheetViewController *)self;
+    } else {
+        return self.parentViewController.bottomSheetController;
+    }
 }
 
 @end

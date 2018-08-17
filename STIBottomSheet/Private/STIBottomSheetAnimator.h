@@ -24,6 +24,7 @@ typedef NS_ENUM(NSInteger, STIBottomSheetPosition) {
 
 @optional
 - (CGFloat)animator:(STIBottomSheetAnimator *)animator didMoveToPosition:(STIBottomSheetPosition)position;
+- (BOOL)animatorShouldBeginGestureDrivenTransition:(STIBottomSheetAnimator *)animator;
 
 
 /**
