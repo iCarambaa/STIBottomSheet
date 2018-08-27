@@ -45,6 +45,16 @@ static const CGFloat kInitialAnimationDuration = 0.5;
     return self;
 }
 
+- (void)moveToPosition:(STIBottomSheetPosition)position animateAlongside:(void (^)(void))animations {
+    [UIView animateWithDuration:kInitialAnimationDuration delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:0 animations:^{
+        [self setSheetPosition:self.maxConstant];
+        if (animations) {
+            animations();
+        }
+        [self.presentingViewController.view layoutIfNeeded];
+    } completion:nil];
+}
+
 - (void)attachGestureRecognizer {
     UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognizerDidChange:)];
     recognizer.delegate = self;
@@ -184,7 +194,6 @@ static const CGFloat kInitialAnimationDuration = 0.5;
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     NSParameterAssert(gestureRecognizer);
-    NSLog(@"Should begin");
     if ([self.delegate respondsToSelector:@selector(animatorShouldBeginGestureDrivenTransition:)]){
         if (![self.delegate animatorShouldBeginGestureDrivenTransition:self]) {
             return NO;

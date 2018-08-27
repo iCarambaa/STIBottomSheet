@@ -47,6 +47,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)addBottomSheet:(UIViewController *)bottomSheet;
 
+- (void)maximizeSheet:(UIViewController *)sheet animateAlongside:(void (^)(void))animations;
+
 @end
 
 @interface UIViewController (STIBottomSheet)

@@ -23,7 +23,7 @@ typedef NS_ENUM(NSInteger, STIBottomSheetPosition) {
 - (CGFloat)animator:(STIBottomSheetAnimator *)animator topConstraintConstantForPosition:(STIBottomSheetPosition)position;
 
 @optional
-- (CGFloat)animator:(STIBottomSheetAnimator *)animator didMoveToPosition:(STIBottomSheetPosition)position;
+- (void)animator:(STIBottomSheetAnimator *)animator didMoveToPosition:(STIBottomSheetPosition)position;
 - (BOOL)animatorShouldBeginGestureDrivenTransition:(STIBottomSheetAnimator *)animator;
 
 
@@ -44,6 +44,8 @@ typedef NS_ENUM(NSInteger, STIBottomSheetPosition) {
 @property (weak, nonatomic) id<STIBottomSheetAnimatorDelegate> delegate;
 
 - (instancetype)initWithSheetViewController:(STISheetContainerViewController *)sheetViewController onViewController:(UIViewController *)viewController topConstraint:(NSLayoutConstraint *)constraint;
+
+- (void)moveToPosition:(STIBottomSheetPosition)position animateAlongside:(void (^)(void))animations;
 
 @end
 

@@ -93,6 +93,15 @@ NS_ASSUME_NONNULL_BEGIN
     [self.bottomSheetAnimators addObject:animator];
 }
 
+- (void)maximizeSheet:(UIViewController *)sheet animateAlongside:(void (^)(void))animations {
+    for (STIBottomSheetAnimator *animator in self.bottomSheetAnimators) {
+        if (animator.managedSheet.embeddedViewController == sheet) {
+            [animator moveToPosition:STIBottomSheetPositionMaximized animateAlongside:animations];
+            break;
+        }
+    }
+}
+
 // MARK: STIBottomSheetAnimatorDelegate
 
 - (CGFloat)animator:(STIBottomSheetAnimator *)animator topConstraintConstantForPosition:(STIBottomSheetPosition)position {
@@ -104,6 +113,10 @@ NS_ASSUME_NONNULL_BEGIN
         default:
             return 0;
     }
+}
+
+- (void)animator:(STIBottomSheetAnimator *)animator didMoveToPosition:(STIBottomSheetPosition)position {
+    [self.view endEditing:YES];
 }
 
 - (BOOL)animatorShouldBeginGestureDrivenTransition:(STIBottomSheetAnimator *)animator {
