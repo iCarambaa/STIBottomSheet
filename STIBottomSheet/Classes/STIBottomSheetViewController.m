@@ -102,6 +102,15 @@ NS_ASSUME_NONNULL_BEGIN
     }
 }
 
+- (void)minimizeSheet:(UIViewController *)sheet animateAlongside:(void (^)(void))animations {
+    for (STIBottomSheetAnimator *animator in self.bottomSheetAnimators) {
+        if (animator.managedSheet.embeddedViewController == sheet) {
+            [animator moveToPosition:STIBottomSheetPositionMinimized animateAlongside:animations];
+            break;
+        }
+    }
+}
+
 // MARK: STIBottomSheetAnimatorDelegate
 
 - (CGFloat)animator:(STIBottomSheetAnimator *)animator topConstraintConstantForPosition:(STIBottomSheetPosition)position {
@@ -116,7 +125,9 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)animator:(STIBottomSheetAnimator *)animator didMoveToPosition:(STIBottomSheetPosition)position {
-    [self.view endEditing:YES];
+    if (position == STIBottomSheetPositionMinimized) {
+        [self.view endEditing:YES];
+    }
 }
 
 - (BOOL)animatorShouldBeginGestureDrivenTransition:(STIBottomSheetAnimator *)animator {

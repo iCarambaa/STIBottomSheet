@@ -46,8 +46,20 @@ static const CGFloat kInitialAnimationDuration = 0.5;
 }
 
 - (void)moveToPosition:(STIBottomSheetPosition)position animateAlongside:(void (^)(void))animations {
+    CGFloat moveToConstant = 0;
+    switch (position) {
+        case STIBottomSheetPositionMinimized:
+            moveToConstant = self.minConstant;
+        break;
+        case STIBottomSheetPositionMaximized:
+            moveToConstant = self.maxConstant;
+        break;
+        default:
+            break;
+    }
+    self.position = position;
     [UIView animateWithDuration:kInitialAnimationDuration delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:0 animations:^{
-        [self setSheetPosition:self.maxConstant];
+        [self setSheetPosition:moveToConstant];
         if (animations) {
             animations();
         }
