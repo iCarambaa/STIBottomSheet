@@ -76,7 +76,7 @@ NS_ASSUME_NONNULL_BEGIN
     [self addChildViewController:sheet];
     sheet.view.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:sheet.view];
-    NSLayoutConstraint *constraint = [sheet.view.topAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:-325];
+    NSLayoutConstraint *constraint = [sheet.view.topAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:0];
     [NSLayoutConstraint activateConstraints:@[
         [sheet.view.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
         [sheet.view.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
@@ -86,6 +86,12 @@ NS_ASSUME_NONNULL_BEGIN
         // Dimming view above the sheet which is most maximized. 5 Constraints offset for rounded corners.
         [self.dimmingView.bottomAnchor constraintLessThanOrEqualToAnchor:sheet.view.topAnchor constant:5]
     ]];
+    
+    [self.view layoutIfNeeded];
+    [UIView animateWithDuration:0.25 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:0 animations:^{
+        constraint.constant = -325;
+        [self.view layoutIfNeeded];
+    } completion:nil];
     [sheet didMoveToParentViewController:self];
     
     STIBottomSheetAnimator *animator = [[STIBottomSheetAnimator alloc] initWithSheetViewController:sheet onViewController:self topConstraint:constraint];
