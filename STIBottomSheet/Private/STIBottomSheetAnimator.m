@@ -243,6 +243,15 @@ static const CGFloat kInitialAnimationDuration = 0.5;
 
 // MARK: Getting and setting
 
+- (void)closeSheetOnCompletion:(void (^)(void))completion {
+    [UIView animateWithDuration:0.25 animations:^{
+        [self setSheetPosition:UIScreen.mainScreen.bounds.size.height];
+        [self.presentingViewController.view layoutIfNeeded];
+    } completion:^(BOOL finished) {
+        completion();
+    }];
+}
+
 - (void)setSheetPosition:(CGFloat)sheetPosition {
     _sheetPosition = sheetPosition;
     self.topConstraint.constant = [self convertFromSheetToDelegateSpace:sheetPosition];

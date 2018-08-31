@@ -9,7 +9,13 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+@class STIBottomSheetViewController;
 
+@protocol STIBottomSheetViewControllerDelegate <NSObject>
+@optional
+
+- (void)bottomSheet:(STIBottomSheetViewController *)bottomSheet didCloseSheet:(UIViewController *)sheet;
+@end
 
 /**
  Container view controller used to add bottom sheets to.
@@ -22,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (strong, nonatomic, readonly) UIViewController *rootViewController;
 
+@property (weak, nonatomic) id<STIBottomSheetViewControllerDelegate> delegate;
 
 /**
  Set this to `NO` to disable moving the bottom sheets.
@@ -44,8 +51,17 @@ NS_ASSUME_NONNULL_BEGIN
  There will be a container added around the new bottom sheet which insets the safe area.
 
  @param bottomSheet UIViewController which will be added as bottom sheet.
+ @param isClosable if YES the bottom sheet shows a close button.
  */
-- (void)addBottomSheet:(UIViewController *)bottomSheet;
+- (void)addBottomSheet:(UIViewController *)bottomSheet closable:(BOOL)isClosable;
+
+
+/**
+ Closes the bottom sheet animated. Calls the delegate after completion.
+
+ @param bottomSheet the bottom sheet which will be closed.
+ */
+- (void)closeBottomSheet:(UIViewController *)bottomSheet;
 
 - (void)maximizeSheet:(UIViewController *)sheet animateAlongside:(void (^)(void))animations;
 - (void)minimizeSheet:(UIViewController *)sheet animateAlongside:(void (^)(void))animations;

@@ -19,11 +19,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation STISheetContainerViewController
 
-- (instancetype)initWithViewController:(UIViewController *)viewController {
+- (instancetype)initWithViewController:(UIViewController *)viewController closable:(BOOL)isClosable {
     NSParameterAssert(viewController);
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         _embeddedViewController = viewController;
+        _isClosable = isClosable;
     }
     return self;
 }
@@ -81,6 +82,23 @@ NS_ASSUME_NONNULL_BEGIN
     [effectView.contentView addSubview:indicator];
     [indicator.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
     [indicator.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:5].active = YES;
+    
+    if (self.isClosable) {
+        UIImage *image = [UIImage imageNamed:@"closeButton"];
+        UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectZero];
+        [closeButton setImage:image forState:UIControlStateNormal];
+        closeButton.translatesAutoresizingMaskIntoConstraints = NO;
+        [effectView.contentView addSubview:closeButton];
+        [closeButton.trailingAnchor constraintEqualToAnchor:effectView.contentView.trailingAnchor constant:-16].active = YES;
+        [closeButton.topAnchor constraintEqualToAnchor:effectView.contentView.topAnchor constant:8].active = YES;
+        [closeButton addTarget:self action:@selector(close) forControlEvents:UIControlEventPrimaryActionTriggered];
+    }
+}
+
+- (void)close {
+    if ([self.delegate respondsToSelector:@selector(sheetContainerDidSelectClose:)]) {
+        [self.delegate sheetContainerDidSelectClose:self];
+    }
 }
 
 @end

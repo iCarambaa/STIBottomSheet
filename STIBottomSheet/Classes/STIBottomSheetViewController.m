@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface STIBottomSheetViewController () <STIBottomSheetAnimatorDelegate>
+@interface STIBottomSheetViewController () <STIBottomSheetAnimatorDelegate, STISheetContainerViewControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray <STIBottomSheetAnimator *> *bottomSheetAnimators;
 
@@ -69,10 +69,11 @@ NS_ASSUME_NONNULL_BEGIN
     [NSLayoutConstraint activateConstraints:dimmingConstraints];
 }
 
-- (void)addBottomSheet:(UIViewController *)bottomSheet {
+- (void)addBottomSheet:(UIViewController *)bottomSheet closable:(BOOL)isClosable {
     NSParameterAssert(bottomSheet);
     
-    STISheetContainerViewController *sheet = [[STISheetContainerViewController alloc] initWithViewController:bottomSheet];
+    STISheetContainerViewController *sheet = [[STISheetContainerViewController alloc] initWithViewController:bottomSheet closable:isClosable];
+    sheet.delegate = self;
     [self addChildViewController:sheet];
     sheet.view.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:sheet.view];
@@ -97,6 +98,26 @@ NS_ASSUME_NONNULL_BEGIN
     STIBottomSheetAnimator *animator = [[STIBottomSheetAnimator alloc] initWithSheetViewController:sheet onViewController:self topConstraint:constraint];
     animator.delegate = self;
     [self.bottomSheetAnimators addObject:animator];
+}
+
+- (void)closeBottomSheet:(UIViewController *)bottomSheet {
+    STIBottomSheetAnimator *animator = nil;
+    for (STIBottomSheetAnimator *search in self.bottomSheetAnimators) {
+        if (search.managedSheet.embeddedViewController == bottomSheet) {
+            animator = search;
+        }
+    }
+    NSAssert(animator, @"Trying to remove bottom sheet which hasn't been added");
+    [animator closeSheetOnCompletion:^{
+        [self.bottomSheetAnimators removeObject:animator];
+        STISheetContainerViewController *sheet = animator.managedSheet;
+        [sheet willMoveToParentViewController:nil];
+        [sheet removeFromParentViewController];
+        [sheet.view removeFromSuperview];
+        if ([self.delegate respondsToSelector:@selector(bottomSheet:didCloseSheet:)]) {
+            [self.delegate bottomSheet:self didCloseSheet:bottomSheet];
+        }
+    }];
 }
 
 - (void)maximizeSheet:(UIViewController *)sheet animateAlongside:(void (^)(void))animations {
@@ -142,6 +163,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)animator:(STIBottomSheetAnimator *)animator updateTransition:(CGFloat)fractionCompleted {
     self.dimmingView.alpha = 0.5 * fractionCompleted;
+}
+
+// MARK: - STISheetContainerViewControllerDelegate
+
+- (void)sheetContainerDidSelectClose:(STISheetContainerViewController *)sheet {
+    [self closeBottomSheet:sheet.embeddedViewController];
 }
 
 @end
