@@ -105,9 +105,14 @@ NS_ASSUME_NONNULL_BEGIN
     for (STIBottomSheetAnimator *search in self.bottomSheetAnimators) {
         if (search.managedSheet.embeddedViewController == bottomSheet) {
             animator = search;
+            break;
         }
     }
-    NSAssert(animator, @"Trying to remove bottom sheet which hasn't been added");
+    
+    if(animator == nil) {
+        return;
+    }
+    
     [animator closeSheetOnCompletion:^{
         [self.bottomSheetAnimators removeObject:animator];
         STISheetContainerViewController *sheet = animator.managedSheet;
