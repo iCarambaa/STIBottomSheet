@@ -26,7 +26,6 @@ typedef NS_ENUM(NSInteger, STIBottomSheetPosition) {
 - (void)animator:(STIBottomSheetAnimator *)animator didMoveToPosition:(STIBottomSheetPosition)position;
 - (BOOL)animatorShouldBeginGestureDrivenTransition:(STIBottomSheetAnimator *)animator;
 
-
 /**
  Updates the delegate of the animation progress. 1 means sheet is maximized, 0 means minimized. May overshoot while dragging.
 

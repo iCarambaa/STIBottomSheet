@@ -150,7 +150,7 @@ NS_ASSUME_NONNULL_BEGIN
         case STIBottomSheetPositionMinimized:
             return -325;
         case STIBottomSheetPositionMaximized:
-            return (CGRectGetHeight(self.view.bounds) - self.view.safeAreaInsets.top) * -1;
+            return (CGRectGetHeight(self.view.bounds) - self.view.safeAreaInsets.top - 12) * -1;
         default:
             return 0;
     }
@@ -163,7 +163,14 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (BOOL)animatorShouldBeginGestureDrivenTransition:(STIBottomSheetAnimator *)animator {
-    return self.isEnabled;
+    if (!self.isEnabled) {
+        return NO;
+    }
+    
+    // Only move front most sheet.
+    STIBottomSheetAnimator *frontMost = self.bottomSheetAnimators.lastObject;
+    BOOL isFrontMost = (frontMost == animator);
+    return isFrontMost;
 }
 
 - (void)animator:(STIBottomSheetAnimator *)animator updateTransition:(CGFloat)fractionCompleted {

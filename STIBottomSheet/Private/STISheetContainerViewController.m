@@ -30,7 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (UIEdgeInsets)additionalSafeAreaInsets {
-    UIEdgeInsets additionalInsets = UIEdgeInsetsMake(20, 0, 0, 0);
+    CGFloat top = self.isClosable ? 50 : 20;
+    UIEdgeInsets additionalInsets = UIEdgeInsetsMake(top, 0, 0, 0);
     return additionalInsets;
 }
 
