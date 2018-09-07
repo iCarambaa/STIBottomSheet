@@ -8,6 +8,7 @@
 
 #import "STIBottomSheetAnimator.h"
 #import "STISheetContainerViewController.h"
+#import "UIView+Search.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -70,25 +71,18 @@ static const CGFloat kInitialAnimationDuration = 0.5;
 - (void)attachGestureRecognizer {
     UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognizerDidChange:)];
     recognizer.delegate = self;
-    
-    // Try to find a scrollview.
-    UIScrollView *scrollView = nil;
-    if ([self.managedSheet.embeddedViewController.view isKindOfClass:[UIScrollView class]]) {
-        scrollView = (UIScrollView *) self.managedSheet.embeddedViewController.view;
-    } else {
-        for (UIView *subview in self.managedSheet.embeddedViewController.view.subviews) {
-            if ([subview isKindOfClass:[UIScrollView class]]) {
-                scrollView = (UIScrollView *)subview;
-                break;
-            }
-        }
-    }
-    
-    if (scrollView) {
-        self.embeddedScrollView = scrollView;
-        [scrollView.panGestureRecognizer requireGestureRecognizerToFail:recognizer];
-    }
     [self.managedSheet.view addGestureRecognizer:recognizer];
+
+    // Try to find a scrollview.
+    [self.managedSheet.embeddedViewController.view sti_enumerateViewsDepthFirst:^BOOL(UIView * _Nonnull view) {
+        if ([view isKindOfClass:[UIScrollView class]]) {
+            UIScrollView *scrollView = (UIScrollView *)view;
+            self.embeddedScrollView = scrollView;
+            [scrollView.panGestureRecognizer requireGestureRecognizerToFail:recognizer];
+            return YES;
+        }
+        return NO;
+    }];
 }
 
 - (void)panGestureRecognizerDidChange:(UIPanGestureRecognizer *)gestureRecognizer {
