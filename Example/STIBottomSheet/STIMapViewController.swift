@@ -8,10 +8,12 @@
 
 import UIKit
 import MapKit
+import STIBottomSheet
 
 @objc class STIMapViewController: UIViewController {
     
     var mapView: MKMapView!
+    var button: UIButton!
     
     override func loadView() {
         super.loadView()
@@ -19,12 +21,20 @@ import MapKit
         map.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(map)
         
-//        let blurview = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-//        blurview.translatesAutoresizingMaskIntoConstraints = false
-//        view.addSubview(blurview)
-//        blurview.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-//        blurview.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-//        blurview.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-//        blurview.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        let button = UIButton(frame: .zero)
+        button.setTitle("Add Sheet", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(.blue, for: .normal)
+        view.addSubview(button)
+        button.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 1).isActive = true
+        button.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8).isActive = true
+        button.addTarget(self, action: #selector(addDemoSheet), for: .primaryActionTriggered)
+    }
+    
+    @objc func addDemoSheet() {
+        guard let sheetController = self.parent as? STIBottomSheetViewController else {
+            fatalError()
+        }
+        sheetController.addBottomSheet(DemoSheetViewController(), closable: true)
     }
 }

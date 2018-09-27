@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
   s.public_header_files = 'STIBottomSheet/Classes/*.h'
   s.private_header_files = 'STIBottomSheet/Private/*.h'
   s.resource_bundles = {
-     'STIBottomSheet' => ['STIBottomSheet/Assets/*.tiff']
+     'STIBottomSheet' => ['STIBottomSheet/Assets/*']
   }
 
   s.frameworks = 'UIKit', 'MapKit'

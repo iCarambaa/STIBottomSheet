@@ -85,7 +85,7 @@ NS_ASSUME_NONNULL_BEGIN
     [indicator.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:5].active = YES;
     
     if (self.isClosable) {
-        UIImage *image = [UIImage imageNamed:@"closeButton"];
+        UIImage *image = [UIImage imageNamed:@"close" inBundle:resourceBundle compatibleWithTraitCollection:nil];
         UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectZero];
         [closeButton setImage:image forState:UIControlStateNormal];
         closeButton.translatesAutoresizingMaskIntoConstraints = NO;

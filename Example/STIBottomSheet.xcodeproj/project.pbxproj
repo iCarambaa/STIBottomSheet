@@ -24,7 +24,6 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
-		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		CBA97910630AFB9EC66BFC61 /* Pods_STIBottomSheet_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC89FB91FAB32BD9311086DD /* Pods_STIBottomSheet_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +64,6 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		65EC2027966CDB19D9C5A62E /* Pods-STIBottomSheet_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STIBottomSheet_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STIBottomSheet_Tests/Pods-STIBottomSheet_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89DA6EF18D8D83560CEF3688 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		BC89FB91FAB32BD9311086DD /* Pods_STIBottomSheet_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STIBottomSheet_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6DEA3BBF8FA45ADD1E1B52D /* Pods-STIBottomSheet_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STIBottomSheet_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STIBottomSheet_Example/Pods-STIBottomSheet_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 				6003F59D195388D20070C39A /* STIAppDelegate.m */,
 				26C926BD211DB92D00343C7F /* DemoSheetViewController.swift */,
 				26C926BC211DB92D00343C7F /* STIMapViewController.swift */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* STIViewController.h */,
 				6003F5A6195388D20070C39A /* STIViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
@@ -287,7 +284,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
