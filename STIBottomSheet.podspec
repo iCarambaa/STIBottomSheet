@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'STIBottomSheet'
-  s.version          = '0.1.0'
+  s.version          = '0.0.1'
   s.summary          = 'A library to present bottom sheets.'
 
 # This description is used to generate tags and improve search results.
@@ -33,5 +33,5 @@ Pod::Spec.new do |s|
      'STIBottomSheet' => ['STIBottomSheet/Assets/*']
   }
 
-  s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit'
 end

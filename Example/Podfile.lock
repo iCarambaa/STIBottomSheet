@@ -1,5 +1,5 @@
 PODS:
-  - STIBottomSheet (0.1.0)
+  - STIBottomSheet (0.0.1)
 
 DEPENDENCIES:
   - STIBottomSheet (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  STIBottomSheet: 4d9c557803000519523e3dd221a8ebc7eae979be
+  STIBottomSheet: 4599bf4bad2eac4331c7ffe8c12c2934fbde1979
 
 PODFILE CHECKSUM: ae686022db077b6e69d2cf4af3f253c5616549c0
 

@@ -33,7 +33,6 @@
 		000000000790 /* Pods-STIBottomSheet_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 000000000780 /* Pods-STIBottomSheet_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0000000007F0 /* Pods-STIBottomSheet_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0000000007E0 /* Pods-STIBottomSheet_Tests-dummy.m */; };
 		000000000810 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000000800 /* UIKit.framework */; };
-		000000000830 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000000820 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,14 +43,14 @@
 			remoteGlobalIDString = 0000000002E0;
 			remoteInfo = "STIBottomSheet-STIBottomSheet";
 		};
-		000000000840 /* PBXContainerItemProxy */ = {
+		000000000820 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000000220;
 			remoteInfo = STIBottomSheet;
 		};
-		000000000860 /* PBXContainerItemProxy */ = {
+		000000000840 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
@@ -113,7 +112,6 @@
 		0000000007D0 /* Pods-STIBottomSheet_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-STIBottomSheet_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		0000000007E0 /* Pods-STIBottomSheet_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-STIBottomSheet_Tests-dummy.m"; sourceTree = "<group>"; };
 		000000000800 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		000000000820 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +120,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0000000002D0 /* Foundation.framework in Frameworks */,
-				000000000830 /* MapKit.framework in Frameworks */,
 				000000000810 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				0000000002C0 /* Foundation.framework */,
-				000000000820 /* MapKit.framework */,
 				000000000800 /* UIKit.framework */,
 			);
 			name = iOS;
@@ -407,7 +403,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				000000000850 /* PBXTargetDependency */,
+				000000000830 /* PBXTargetDependency */,
 			);
 			name = "Pods-STIBottomSheet_Example";
 			productName = "Pods-STIBottomSheet_Example";
@@ -426,7 +422,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				000000000870 /* PBXTargetDependency */,
+				000000000850 /* PBXTargetDependency */,
 			);
 			name = "Pods-STIBottomSheet_Tests";
 			productName = "Pods-STIBottomSheet_Tests";
@@ -543,17 +539,17 @@
 			target = 0000000002E0 /* STIBottomSheet-STIBottomSheet */;
 			targetProxy = 000000000380 /* PBXContainerItemProxy */;
 		};
-		000000000850 /* PBXTargetDependency */ = {
+		000000000830 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = STIBottomSheet;
 			target = 000000000220 /* STIBottomSheet */;
-			targetProxy = 000000000840 /* PBXContainerItemProxy */;
+			targetProxy = 000000000820 /* PBXContainerItemProxy */;
 		};
-		000000000870 /* PBXTargetDependency */ = {
+		000000000850 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-STIBottomSheet_Example";
 			target = 000000000520 /* Pods-STIBottomSheet_Example */;
-			targetProxy = 000000000860 /* PBXContainerItemProxy */;
+			targetProxy = 000000000840 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
