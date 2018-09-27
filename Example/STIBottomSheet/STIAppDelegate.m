@@ -16,7 +16,7 @@
     STIMapViewController *mapVC = [[STIMapViewController alloc] init];
     STIBottomSheetViewController *sheetVC = [[STIBottomSheetViewController alloc] initWithRootViewController:mapVC];
     DemoSheetViewController *demoSheet = [[DemoSheetViewController alloc] init];
-    [sheetVC addBottomSheet:demoSheet];
+    [sheetVC addBottomSheet:demoSheet closable:NO];
     
     UIWindow *window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     window.rootViewController = sheetVC;
