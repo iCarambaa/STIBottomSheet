@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0000000002D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0000000002C0 /* Foundation.framework */; };
-		000000000360 /* shadow.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 0000000001C0 /* shadow.tiff */; };
 		000000000370 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0000000001D0 /* Assets.xcassets */; };
 		0000000003A0 /* STIBottomSheet.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 000000000320 /* STIBottomSheet.bundle */; };
 		0000000003D0 /* STIBottomSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0000000000F0 /* STIBottomSheetViewController.m */; };
@@ -60,7 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0000000000B0 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0000000000B0 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		0000000000D0 /* STIBottomSheet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = STIBottomSheet.h; sourceTree = "<group>"; };
 		0000000000E0 /* STIBottomSheetViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = STIBottomSheetViewController.h; sourceTree = "<group>"; };
 		0000000000F0 /* STIBottomSheetViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = STIBottomSheetViewController.m; sourceTree = "<group>"; };
@@ -74,14 +73,13 @@
 		000000000180 /* STISheetContainerViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = STISheetContainerViewController.m; sourceTree = "<group>"; };
 		000000000190 /* UIView+Search.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+Search.h"; sourceTree = "<group>"; };
 		0000000001A0 /* UIView+Search.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Search.m"; sourceTree = "<group>"; };
-		0000000001C0 /* shadow.tiff */ = {isa = PBXFileReference; includeInIndex = 1; name = shadow.tiff; path = STIBottomSheet/Assets/shadow.tiff; sourceTree = "<group>"; };
 		0000000001D0 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = STIBottomSheet/Assets/Assets.xcassets; sourceTree = "<group>"; };
-		0000000001F0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		000000000200 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		000000000210 /* STIBottomSheet.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = STIBottomSheet.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		000000000260 /* STIBottomSheet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = STIBottomSheet.framework; path = STIBottomSheet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0000000001F0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		000000000200 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		000000000210 /* STIBottomSheet.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = STIBottomSheet.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		000000000260 /* STIBottomSheet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STIBottomSheet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0000000002C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		000000000320 /* STIBottomSheet.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = STIBottomSheet.bundle; path = "STIBottomSheet-STIBottomSheet.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		000000000320 /* STIBottomSheet.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STIBottomSheet.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		0000000003C0 /* ResourceBundle-STIBottomSheet-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-STIBottomSheet-Info.plist"; sourceTree = "<group>"; };
 		0000000004A0 /* STIBottomSheet.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = STIBottomSheet.xcconfig; sourceTree = "<group>"; };
 		0000000004B0 /* STIBottomSheet.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = STIBottomSheet.modulemap; sourceTree = "<group>"; };
@@ -89,7 +87,7 @@
 		0000000004E0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0000000004F0 /* STIBottomSheet-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "STIBottomSheet-prefix.pch"; sourceTree = "<group>"; };
 		000000000500 /* STIBottomSheet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "STIBottomSheet-dummy.m"; sourceTree = "<group>"; };
-		000000000560 /* Pods_STIBottomSheet_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_STIBottomSheet_Example.framework; path = "Pods-STIBottomSheet_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		000000000560 /* Pods_STIBottomSheet_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STIBottomSheet_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0000000005D0 /* Pods-STIBottomSheet_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STIBottomSheet_Example.release.xcconfig"; sourceTree = "<group>"; };
 		0000000005E0 /* Pods-STIBottomSheet_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STIBottomSheet_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		0000000005F0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,7 +98,7 @@
 		000000000650 /* Pods-STIBottomSheet_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-STIBottomSheet_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		000000000660 /* Pods-STIBottomSheet_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-STIBottomSheet_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		000000000670 /* Pods-STIBottomSheet_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-STIBottomSheet_Example-dummy.m"; sourceTree = "<group>"; };
-		0000000006D0 /* Pods_STIBottomSheet_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_STIBottomSheet_Tests.framework; path = "Pods-STIBottomSheet_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0000000006D0 /* Pods_STIBottomSheet_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STIBottomSheet_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		000000000740 /* Pods-STIBottomSheet_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STIBottomSheet_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		000000000750 /* Pods-STIBottomSheet_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STIBottomSheet_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		000000000760 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -243,7 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				0000000001D0 /* Assets.xcassets */,
-				0000000001C0 /* shadow.tiff */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -472,7 +469,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				000000000370 /* Assets.xcassets in Resources */,
-				000000000360 /* shadow.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

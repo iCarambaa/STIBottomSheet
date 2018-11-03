@@ -62,21 +62,9 @@ NS_ASSUME_NONNULL_BEGIN
     [self addChildViewController:self.embeddedViewController];
     [self.embeddedViewController didMoveToParentViewController:self];
     
-    NSBundle *podBundle = [NSBundle bundleForClass:[self class]];
-    NSURL *urlToResourceBundle = [podBundle URLForResource:@"STIBottomSheet" withExtension:@"bundle"];
-    NSBundle *resourceBundle = [NSBundle bundleWithURL:urlToResourceBundle];
-    NSURL *urlToShadow = [resourceBundle URLForResource:@"shadow" withExtension:@"tiff"];
-    NSData *shadowData = [NSData dataWithContentsOfURL:urlToShadow];
-    UIImage *shadowImage = [UIImage imageWithData:shadowData];
-    UIImageView *shadowImageView = [[UIImageView alloc] initWithImage:shadowImage];
-    [shadowImageView setContentStretch:CGRectMake(0.490991, 0.90833, 0.018018, 0.03333)];
-    shadowImageView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:shadowImageView];
-    [self.view sendSubviewToBack:shadowImageView];
-    [shadowImageView.bottomAnchor constraintEqualToAnchor:self.view.topAnchor constant:16].active = YES;
-    [shadowImageView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:-18].active = YES;
-    [shadowImageView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:18].active = YES;
-    [shadowImageView.heightAnchor constraintEqualToConstant:24].active = YES;
+    self.view.layer.shadowOpacity = 0.3;
+    self.view.layer.shadowOffset = CGSizeMake(0, -2);
+
     
     UIView *indicator = [[STIIndicatorView alloc] initWithFrame:CGRectZero];
     indicator.translatesAutoresizingMaskIntoConstraints = NO;
@@ -85,6 +73,9 @@ NS_ASSUME_NONNULL_BEGIN
     [indicator.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:5].active = YES;
     
     if (self.isClosable) {
+        NSBundle *podBundle = [NSBundle bundleForClass:[self class]];
+        NSURL *urlToResourceBundle = [podBundle URLForResource:@"STIBottomSheet" withExtension:@"bundle"];
+        NSBundle *resourceBundle = [NSBundle bundleWithURL:urlToResourceBundle];
         UIImage *image = [UIImage imageNamed:@"close" inBundle:resourceBundle compatibleWithTraitCollection:nil];
         UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectZero];
         [closeButton setImage:image forState:UIControlStateNormal];
