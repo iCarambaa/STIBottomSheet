@@ -159,6 +159,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)animator:(STIBottomSheetAnimator *)animator didMoveToPosition:(STIBottomSheetPosition)position {
     if (position == STIBottomSheetPositionMinimized) {
         [self.view endEditing:YES];
+        if ([self.delegate respondsToSelector:@selector(bottomSheet:didMinimizeSheet:)]) {
+            [self.delegate bottomSheet:self didMinimizeSheet:animator.managedSheet.embeddedViewController];
+        }
+    } else if (position == STIBottomSheetPositionMaximized) {
+        if ([self.delegate respondsToSelector:@selector(bottomSheet:didMaximizeSheet:)]) {
+            [self.delegate bottomSheet:self didMaximizeSheet:animator.managedSheet.embeddedViewController];
+        }
     }
 }
 

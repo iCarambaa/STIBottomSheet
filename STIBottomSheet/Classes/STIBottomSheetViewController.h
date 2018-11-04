@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 
 - (void)bottomSheet:(STIBottomSheetViewController *)bottomSheet didCloseSheet:(UIViewController *)sheet;
+- (void)bottomSheet:(STIBottomSheetViewController *)bottomSheet didMaximizeSheet:(UIViewController *)sheet;
+- (void)bottomSheet:(STIBottomSheetViewController *)bottomSheet didMinimizeSheet:(UIViewController *)sheet;
+
 @end
 
 /**
