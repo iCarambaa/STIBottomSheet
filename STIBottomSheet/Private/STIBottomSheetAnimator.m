@@ -46,7 +46,7 @@ static const CGFloat kInitialAnimationDuration = 0.5;
     return self;
 }
 
-- (void)moveToPosition:(STIBottomSheetPosition)position animateAlongside:(void (^)(void))animations {
+- (void)moveToPosition:(STIBottomSheetPosition)position animateAlongside:(void (^ _Nullable)(void))animations completion:(void (^ _Nullable)(void))completion {
     CGFloat moveToConstant = 0;
     switch (position) {
         case STIBottomSheetPositionMinimized:
@@ -65,7 +65,11 @@ static const CGFloat kInitialAnimationDuration = 0.5;
             animations();
         }
         [self.presentingViewController.view layoutIfNeeded];
-    } completion:nil];
+    } completion:^(BOOL finished) {
+        if (completion) {
+            completion();
+        }
+    }];
 }
 
 - (void)attachGestureRecognizer {

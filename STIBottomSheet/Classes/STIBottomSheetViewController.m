@@ -125,19 +125,19 @@ NS_ASSUME_NONNULL_BEGIN
     }];
 }
 
-- (void)maximizeSheet:(UIViewController *)sheet animateAlongside:(void (^)(void))animations {
+- (void)maximizeSheet:(UIViewController *)sheet animateAlongside:(void (^ _Nullable)(void))animations completion:(void (^ _Nullable)(void))completion {
     for (STIBottomSheetAnimator *animator in self.bottomSheetAnimators) {
         if (animator.managedSheet.embeddedViewController == sheet) {
-            [animator moveToPosition:STIBottomSheetPositionMaximized animateAlongside:animations];
+            [animator moveToPosition:STIBottomSheetPositionMaximized animateAlongside:animations completion:completion];
             break;
         }
     }
 }
 
-- (void)minimizeSheet:(UIViewController *)sheet animateAlongside:(void (^)(void))animations {
+- (void)minimizeSheet:(UIViewController *)sheet animateAlongside:(void (^ _Nullable)(void))animations completion:(void (^ _Nullable)(void))completion{
     for (STIBottomSheetAnimator *animator in self.bottomSheetAnimators) {
         if (animator.managedSheet.embeddedViewController == sheet) {
-            [animator moveToPosition:STIBottomSheetPositionMinimized animateAlongside:animations];
+            [animator moveToPosition:STIBottomSheetPositionMinimized animateAlongside:animations completion:completion];
             break;
         }
     }

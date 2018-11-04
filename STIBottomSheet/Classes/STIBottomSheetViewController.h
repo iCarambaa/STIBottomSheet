@@ -63,8 +63,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)closeBottomSheet:(UIViewController *)bottomSheet;
 
-- (void)maximizeSheet:(UIViewController *)sheet animateAlongside:(void (^)(void))animations;
-- (void)minimizeSheet:(UIViewController *)sheet animateAlongside:(void (^)(void))animations;
+- (void)maximizeSheet:(UIViewController *)sheet animateAlongside:(void (^ _Nullable)(void))animations completion:(void (^ _Nullable)(void))completion;
+- (void)minimizeSheet:(UIViewController *)sheet animateAlongside:(void (^ _Nullable)(void))animations completion:(void (^ _Nullable)(void))completion;
 
 @end
 

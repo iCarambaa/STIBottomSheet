@@ -44,7 +44,7 @@ typedef NS_ENUM(NSInteger, STIBottomSheetPosition) {
 
 - (instancetype)initWithSheetViewController:(STISheetContainerViewController *)sheetViewController onViewController:(UIViewController *)viewController topConstraint:(NSLayoutConstraint *)constraint;
 
-- (void)moveToPosition:(STIBottomSheetPosition)position animateAlongside:(void (^)(void))animations;
+- (void)moveToPosition:(STIBottomSheetPosition)position animateAlongside:(void (^ _Nullable)(void))animations completion:(void (^ _Nullable)(void))completion;
 - (void)closeSheetOnCompletion:(void (^)(void))completion;
 
 @end
