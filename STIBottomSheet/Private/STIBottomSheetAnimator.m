@@ -99,11 +99,10 @@ static const CGFloat kInitialAnimationDuration = 0.5;
                 position = self.minConstant + pow(difference, 0.7);
             }
             
-            // Scroll embedded ScrollView when scrolling above maximum.
+            // Rubberband above maximum.
             if (position < self.maxConstant) {
                 CGFloat difference = self.maxConstant - position;
-                self.embeddedScrollView.contentOffset = CGPointMake(self.embeddedScrollView.contentOffset.x, difference - self.embeddedScrollView.adjustedContentInset.top);
-                position = self.maxConstant;
+                position = self.maxConstant - pow(difference, 0.7);
             }
             
             [self setSheetPosition:position];
