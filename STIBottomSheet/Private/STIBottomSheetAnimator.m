@@ -26,6 +26,7 @@ static const CGFloat kInitialAnimationDuration = 0.5;
 @property (nonatomic, readonly) CGFloat minConstant;
 @property (weak, nonatomic) UIScrollView *embeddedScrollView;
 
+@property (nonatomic) UIPanGestureRecognizer *panRecognizer;
 
 @end
 
@@ -75,18 +76,8 @@ static const CGFloat kInitialAnimationDuration = 0.5;
 - (void)attachGestureRecognizer {
     UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognizerDidChange:)];
     recognizer.delegate = self;
+    self.panRecognizer = recognizer;
     [self.managedSheet.view addGestureRecognizer:recognizer];
-
-    // Try to find a scrollview.
-    [self.managedSheet.embeddedViewController.view sti_enumerateViewsDepthFirst:^BOOL(UIView * _Nonnull view) {
-        if ([view isKindOfClass:[UIScrollView class]]) {
-            UIScrollView *scrollView = (UIScrollView *)view;
-            self.embeddedScrollView = scrollView;
-            [scrollView.panGestureRecognizer requireGestureRecognizerToFail:recognizer];
-            return YES;
-        }
-        return NO;
-    }];
 }
 
 - (void)panGestureRecognizerDidChange:(UIPanGestureRecognizer *)gestureRecognizer {
@@ -224,6 +215,17 @@ static const CGFloat kInitialAnimationDuration = 0.5;
     }
     
     return NO;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    if (self.panRecognizer == gestureRecognizer
+        && [otherGestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]
+        && [otherGestureRecognizer.view isKindOfClass:[UIScrollView class]]) {
+        self.embeddedScrollView = (UIScrollView *)otherGestureRecognizer.view;
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 - (void)updateDelegateWithAnimationProgress {
