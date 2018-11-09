@@ -253,6 +253,7 @@
 				ORGANIZATIONNAME = "Sven Titgemeyer";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
+						DevelopmentTeam = M9MFW3K3L7;
 						LastSwiftMigration = 1000;
 					};
 					6003F5AD195388D20070C39A = {
@@ -522,6 +523,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = M9MFW3K3L7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "STIBottomSheet/STIBottomSheet-Prefix.pch";
 				INFOPLIST_FILE = "STIBottomSheet/STIBottomSheet-Info.plist";
@@ -542,6 +544,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = M9MFW3K3L7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "STIBottomSheet/STIBottomSheet-Prefix.pch";
 				INFOPLIST_FILE = "STIBottomSheet/STIBottomSheet-Info.plist";
