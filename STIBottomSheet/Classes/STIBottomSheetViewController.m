@@ -178,7 +178,13 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)animator:(STIBottomSheetAnimator *)animator updateTransition:(CGFloat)fractionCompleted {
-    self.dimmingView.alpha = 0.5 * fractionCompleted;
+    CGFloat completed = 0;
+    for (STIBottomSheetAnimator *animator in self.bottomSheetAnimators) {
+        if (animator.fractionCompleted > completed) {
+            completed = animator.fractionCompleted;
+        }
+    }
+    self.dimmingView.alpha = 0.5 * completed;
 }
 
 // MARK: - STISheetContainerViewControllerDelegate

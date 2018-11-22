@@ -41,6 +41,7 @@ static const CGFloat kInitialAnimationDuration = 0.5;
         _topConstraint = constraint;
         _position = STIBottomSheetPositionMinimized;
         _sheetPosition = 0;
+        _fractionCompleted = 0;
         [self attachGestureRecognizer];
         
     }
@@ -236,6 +237,8 @@ static const CGFloat kInitialAnimationDuration = 0.5;
     if (remainingDistance != 0) {
         progress = 1 - remainingDistance / distance;
     }
+    
+    _fractionCompleted = progress;
     if ([self.delegate respondsToSelector:@selector(animator:updateTransition:)]) {
         [self.delegate animator:self updateTransition:progress];
     }

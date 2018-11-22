@@ -41,6 +41,7 @@ typedef NS_ENUM(NSInteger, STIBottomSheetPosition) {
 @property (strong, nonatomic, readonly) STISheetContainerViewController *managedSheet;
 @property (strong, nonatomic, readonly) UIViewController *presentingViewController;
 @property (weak, nonatomic) id<STIBottomSheetAnimatorDelegate> delegate;
+@property (nonatomic, readonly) CGFloat fractionCompleted;
 
 - (instancetype)initWithSheetViewController:(STISheetContainerViewController *)sheetViewController onViewController:(UIViewController *)viewController topConstraint:(NSLayoutConstraint *)constraint;
 
