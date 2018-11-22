@@ -174,10 +174,7 @@ NS_ASSUME_NONNULL_BEGIN
         return NO;
     }
     
-    // Only move front most sheet.
-    STIBottomSheetAnimator *frontMost = self.bottomSheetAnimators.lastObject;
-    BOOL isFrontMost = (frontMost == animator);
-    return isFrontMost;
+    return YES;
 }
 
 - (void)animator:(STIBottomSheetAnimator *)animator updateTransition:(CGFloat)fractionCompleted {
